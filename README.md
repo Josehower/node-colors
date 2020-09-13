@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/Josehower/node-colors)](https://repl.it/github/Josehower/node-colors)
+
 # Node colors
 
 this small app is an exercise that allow the user create a square from the selected color
