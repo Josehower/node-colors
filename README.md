@@ -1,16 +1,18 @@
 # Node colors
 
-this small app is an excercise that allow the user create an square from the selected collor
+this small app is an exercise that allow the user create a square from the selected color
 
 ## Usage
 
-run index.js geve you a responce whit a random color
+run index.js give you a response whit a random color
 
-if you want to use your own colors just type the color and the luminocity as arguments
+if you want to use your own colors just type the color and the luminosity as arguments
 
 ```sh
 node index.js red dark
 ```
+
+![usage Example](red-dark.png)
 
 you can also type
 
@@ -18,10 +20,14 @@ you can also type
 node index.js ask
 ```
 
+![ask usage Example](ask.png)
+
 to get a more interactive response
 
-Also you can change the size of the square using as first argument a WWxHH number
+Also, you can change the size of the square using as first argument a WWxHH number
 
 ```sh
-node index.js 30x20 ask green dark
+node index.js 30x20
 ```
+
+![big square usage Example](bigSquare.png)
