@@ -8,20 +8,26 @@ const randomColor = require('randomcolor');
 const chalk = require('chalk');
 
 const inputSize = process.argv[2];
-const inputColor =
-  process.argv[4] || parseInt(inputSize.split('x')[0], 10)
-    ? process.argv[3]
-    : process.argv[2];
+let inputColor;
+if (inputSize) {
+  inputColor =
+    process.argv[4] || parseInt(inputSize.split('x')[0], 10)
+      ? process.argv[3]
+      : process.argv[2];
+}
 
 const inputLuminocity = process.argv[4] ? process.argv[4] : process.argv[3];
 
+const isInputNotEmpty = !!process.argv[2];
 //check for a size input
-const squareW = parseInt(inputSize.split('x')[0], 10)
-  ? parseInt(inputSize.split('x')[0], 10)
-  : 31;
-const squareH = parseInt(inputSize.split('x')[1], 10)
-  ? parseInt(inputSize.split('x')[1], 10)
-  : 9;
+const squareW =
+  isInputNotEmpty && parseInt(inputSize.split('x')[0], 10)
+    ? parseInt(inputSize.split('x')[0], 10)
+    : 31;
+const squareH =
+  isInputNotEmpty && parseInt(inputSize.split('x')[1], 10)
+    ? parseInt(inputSize.split('x')[1], 10)
+    : 9;
 
 let countIndex = 0;
 function hexIndex() {
@@ -31,13 +37,13 @@ function hexIndex() {
 }
 
 function createPattern(color) {
-  let flexPattern = [];
+  const flexPattern = [];
   let shouldCreateACentralLine = false;
   const arr = new Array(squareW);
   const isSquareHEven = squareH % 2 === 0; //boolean
 
   for (let hashLine = 1; hashLine <= squareH; hashLine++) {
-    /* if the loop is on the second third of the Heigth of the square 
+    /* if the loop is on the second third of the Heigth of the square
     shouldCreateACentralLine is true */
     shouldCreateACentralLine =
       hashLine > squareH / 3 && hashLine <= (squareH / 3) * 2 ? true : false;
